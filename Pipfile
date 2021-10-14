@@ -22,6 +22,7 @@ alembic = "*"
 sqlalchemy = "*"
 pytest = "*"
 python-jose = "*"
+python-dotenv = "*"
 
 [dev-packages]
 pylint = "*"
@@ -30,8 +31,6 @@ flake8 = "*"
 
 [requires]
 python_version = "3.7.12"
-
-
 
 [scripts]
 vers = "python --version"
