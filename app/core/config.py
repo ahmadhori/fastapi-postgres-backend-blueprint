@@ -20,11 +20,11 @@ class Settings(BaseSettings):
         raise ValueError(v)
 
     PROJECT_NAME: str
-    POSTGRES_SERVER: str
+    DB_HOST: str
+    DB_PORT: str
     DB_USER: str
     DB_PASSWORD: str
     DB_NAME: str
-    DB_HOST: str
     SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = None
 
     @validator("SQLALCHEMY_DATABASE_URI", pre=True)
