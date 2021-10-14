@@ -5,6 +5,7 @@ from pydantic import AnyHttpUrl, BaseSettings, PostgresDsn, validator
 
 load_dotenv(verbose=True)
 
+
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     # BACKEND_CORS_ORIGINS is a JSON-formatted list of origins
@@ -37,6 +38,7 @@ class Settings(BaseSettings):
             user=values.get("DB_USER"),
             password=values.get("DB_PASSWORD"),
             host=values.get("DB_HOST"),
+            port=values.get("DB_PORT"),
             path=f"/{values.get('DB_NAME') or ''}",
         )
 
