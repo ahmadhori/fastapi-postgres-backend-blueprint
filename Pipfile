@@ -1,0 +1,37 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+uvicorn = "*"
+fastapi = "*"
+python-multipart = "*"
+email-validator = "*"
+requests = "*"
+celery = "*"
+passlib = "*"
+tenacity = "*"
+pydantic = "*"
+emails = "*"
+raven = "*"
+gunicorn = "*"
+jinja2 = "*"
+psycopg2-binary = "*"
+alembic = "*"
+sqlalchemy = "*"
+pytest = "*"
+python-jose = "*"
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.7.12"
+
+
+
+[scripts]
+vers = "python --version"
