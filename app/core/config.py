@@ -1,8 +1,9 @@
-import secrets
 from typing import Any, Dict, List, Optional, Union
 
-from pydantic import AnyHttpUrl, BaseSettings, EmailStr, HttpUrl, PostgresDsn, validator
+from dotenv import load_dotenv
+from pydantic import AnyHttpUrl, BaseSettings, PostgresDsn, validator
 
+load_dotenv(verbose=True)
 
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"

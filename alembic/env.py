@@ -1,10 +1,11 @@
 from __future__ import with_statement
 
-import os
+from logging.config import fileConfig
+
+from app.core.config import settings
+from sqlalchemy import engine_from_config, pool
 
 from alembic import context
-from sqlalchemy import engine_from_config, pool
-from logging.config import fileConfig
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -21,7 +22,6 @@ fileConfig(config.config_file_name)
 # target_metadata = None
 
 from app.db.base import Base  # noqa
-from app.core.config import settings
 
 target_metadata = Base.metadata
 
@@ -32,8 +32,8 @@ target_metadata = Base.metadata
 
 
 def get_url():
-    print(settings.SQLALCHEMY_DATABASE_URI)
-    return settings.SQLALCHEMY_DATABASE_FDRECOMMEND_URI
+    return str(settings.SQLALCHEMY_DATABASE_URI)
+
 
 def run_migrations_offline():
     """Run migrations in 'offline' mode.
