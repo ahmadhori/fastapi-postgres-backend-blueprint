@@ -1,12 +1,12 @@
 version: "3.3"
 services:
-#  api:
-#    build: .
-#    depends_on:
-#      - db
-#    ports:
-#      - "8080:8080"
-#    container_name: "fd-content-recommendation-api"
+  api:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    container_name: "fastapi-backend-api"
 #    volumes:
 #      - ~/.aws/:/root/.aws:ro
   db:
