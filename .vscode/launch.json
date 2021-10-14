@@ -30,21 +30,16 @@
       "justMyCode": true
     },
     {
-      "name": "Python: Flask",
+      "name": "Alembic",
       "type": "python",
       "request": "launch",
-      "module": "flask",
-      "env": {
-        "FLASK_APP": "app/app.py",
-        "FLASK_ENV": "development",
-        "FLASK_DEBUG": "0"
-      },
+      "module": "alembic",
+      "console": "integratedTerminal",
       "args": [
-        "run",
-        "--no-debugger",
-        "--no-reload"
+        "upgrade",
+        "head"
       ],
-      "justMyCode": false
+      "justMyCode": true
     },
     {
       "name": "Python: Current File With env",
@@ -57,9 +52,6 @@
         "PYTHONPATH": "${workspaceRoot}"
       },
       "justMyCode": false,
-      "args": [
-        "--custom_image"
-      ],
     },
     {
       "name": "Python: Current File",
@@ -68,37 +60,5 @@
       "program": "${file}",
       "console": "integratedTerminal"
     },
-    {
-      "name": "Python: Tunnel",
-      "type": "python",
-      "request": "launch",
-      "program": "${file}",
-      "console": "integratedTerminal",
-      "args": [
-        "--env",
-        "prd",
-        "--resource",
-        "rds",
-        "--host_filter",
-        "domain",
-        "--local_port",
-        "54325"
-      ]
-    },
-    {
-      "name": "Python: csv importer",
-      "type": "python",
-      "request": "launch",
-      "program": "${file}",
-      "console": "integratedTerminal",
-      "args": [
-        "--events_csv",
-        "tests/data/integration/event_insights.csv",
-        "--campaigns_csv",
-        "tests/data/integration/campaigns.csv",
-        "--sales_csv",
-        "tests/data/integration/sales.csv"
-      ]
-    }
   ]
 }
