@@ -21,6 +21,7 @@ fileConfig(config.config_file_name)
 # target_metadata = None
 
 from app.db.base import Base  # noqa
+from app.core.config import settings
 
 target_metadata = Base.metadata
 
@@ -31,12 +32,8 @@ target_metadata = Base.metadata
 
 
 def get_url():
-    user = os.getenv("POSTGRES_USER", "postgres")
-    password = os.getenv("POSTGRES_PASSWORD", "")
-    server = os.getenv("POSTGRES_SERVER", "db")
-    db = os.getenv("POSTGRES_DB", "app")
-    return f"postgresql://{user}:{password}@{server}/{db}"
-
+    print(settings.SQLALCHEMY_DATABASE_URI)
+    return settings.SQLALCHEMY_DATABASE_FDRECOMMEND_URI
 
 def run_migrations_offline():
     """Run migrations in 'offline' mode.
